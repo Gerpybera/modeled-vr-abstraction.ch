@@ -1,0 +1,127 @@
+/* Styles spécifiques pour la page program.html */
+body {
+    font-family: "Century Gothic", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #2ECC71; /* Gris anthracite */
+    color: #FFFFFF; /* Blanc pur */
+}
+
+.navbar {
+    background-color: #000; /* Fond noir */
+    overflow: hidden;
+    position: relative;
+    z-index: 2; /* Assurez-vous que la barre de navigation est au-dessus de la vidéo */
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul li {
+    display: inline;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    padding: 14px 20px;
+    display: inline-block;
+    color: #FFFFFF; /* Blanc pur */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar ul li a:hover, .navbar ul li a.active {
+    background-color: #E91E63; /* Magenta vif */
+    color: #FFFFFF; /* Blanc pur */
+}
+
+.navbar ul li:not(:last-child) a {
+    border-right: 2px solid #FFFFFF; /* Ligne de séparation entre les onglets */
+}
+
+.content {
+    padding: 20px;
+}
+
+.content h2 {
+    color: #007BFF; /* Couleur du titre */
+    text-align: center; /* Centrage du titre */
+}
+
+.content p {
+    color: #fff; /* Couleur du texte */
+    text-align: justify; /* Justification du texte */
+}
+
+.footer {
+    background-color: #2C3E50;
+    color: #fff; /* Couleur du texte du pied de page */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end; /* Assurer que le footer reste en bas */
+    height: 100vh; /* Assurer que le footer prend toute la hauteur de la page */
+}
+
+.logo-link {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000; /* Assurez-vous que le logo est au-dessus du contenu */
+}
+
+.logo {
+    width: 100px; /* Ajustez la taille du logo selon vos besoins */
+    height: auto;
+}
+
+.logos {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.logos a {
+    margin: 0 10px;
+}
+
+.logos img {
+    width: 50px; /* Ajustez la taille des logos selon vos besoins */
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.logos img:hover {
+    transform: scale(1.1);
+}
+
+.logos {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Aligner les logos en bas */
+    height: 100px; /* Ajuster selon vos besoins */
+    margin-top: 20px; /* Ajuster selon vos besoins */
+}
+
+.logo-img {
+    max-height: 50px; /* Ajuster selon vos besoins */
+    margin: 0 10px; /* Espacement entre les logos */
+}
+
+.additional-rectangle {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.rectangle {
+    width: 50px;
+    height: 20px;
+    background-color: #f39c12; /* Couleur du rectangle */
+    margin-top: 10px;
+}

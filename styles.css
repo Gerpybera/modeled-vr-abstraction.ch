@@ -1,0 +1,190 @@
+body {
+    font-family: "Century Gothic", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #2C3E50; /* Gris anthracite */
+    color: #FFFFFF; /* Blanc pur */
+}
+
+.intro-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000; /* Fond noir pour l'animation */
+    z-index: 9999; /* Assurez-vous que l'animation est au-dessus du contenu */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-animation img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.content {
+    opacity: 0; /* Commencez par rendre le contenu invisible */
+    transition: opacity 1s ease-in-out; /* Ajoutez une transition d'opacité pour l'effet d'introduction */
+}
+
+.navbar {
+    background-color: #000; /* Fond noir */
+    overflow: hidden;
+    position: relative;
+    z-index: 2; /* Assurez-vous que la barre de navigation est au-dessus de la vidéo */
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul li {
+    display: inline;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    padding: 14px 20px;
+    display: inline-block;
+    color: #FFFFFF; /* Blanc pur */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar ul li a:hover, .navbar ul li a.active {
+    background-color: #E91E63; /* Magenta vif */
+    color: #FFFFFF; /* Blanc pur */
+}
+
+.navbar ul li:not(:last-child) a {
+    border-right: 2px solid #FFFFFF; /* Ligne de séparation entre les onglets */
+}
+
+.video-background {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 50px); /* Hauteur de l'écran moins la hauteur de la barre de navigation */
+    overflow: hidden;
+}
+
+.video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    transition: opacity 0.5s ease;
+}
+
+.video-background:hover video {
+    opacity: 0.5; /* Rendre la vidéo plus sombre au survol */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Overlay semi-transparent pour rendre le texte plus lisible */
+    z-index: 0;
+}
+
+.header-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    padding: 20px;
+}
+
+.header-content h1 {
+    margin: 0;
+    font-size: 3em;
+    color: #FFFFFF; /* Blanc pur */
+}
+
+.header-content p {
+    font-size: 1.5em;
+    margin: 20px 0;
+    color: #FFFFFF; /* Blanc pur */
+}
+
+.cta-button {
+    background-color: #FFFFFF; /* Blanc pur */
+    color: #007BFF; /* Bleu électrique */
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #007BFF; /* Bleu électrique */
+    color: #FFFFFF; /* Blanc pur */
+    transform: scale(1.1);
+}
+
+.footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #2C3E50; /* Gris anthracite */
+}
+
+.footer p {
+    margin: 0;
+}
+
+.logo-link {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000; /* Assurez-vous que le logo est au-dessus du contenu */
+}
+
+.logo {
+    width: 100px; /* Ajustez la taille du logo selon vos besoins */
+    height: auto;
+}
+
+.logos {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.logos a {
+    margin: 0 10px;
+}
+
+.logos img {
+    width: 50px; /* Ajustez la taille des logos selon vos besoins */
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.logos img:hover {
+    transform: scale(1.1);
+}
+
+.youtube-video {
+    width: 1120px;
+    height: 630px;
+    margin: 0 auto; /* Centrer la vidéo horizontalement */
+}
+
