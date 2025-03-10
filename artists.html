@@ -5,7 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artistes - Modeled VR Abstraction</title>
     <link rel="stylesheet" href="styles5.css">
+    <link rel="stylesheet" href="responsive.css">
     <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        
         .rounded-box {
             border-radius: 255px;
             padding: 1px 25px;
@@ -32,7 +41,8 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            height: calc(100vh - 150px);
+            flex-grow: 1;
+            padding-bottom: 30px; /* Espace entre le contenu et le footer */
         }
         .text-column {
             font-family: Arial, sans-serif;
@@ -46,17 +56,14 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-end;
-            height: 1925px; /* Ajusté pour assurer que le contenu soit bien placé */
-            position: relative;
-            bottom: 0;
             width: 100%;
+            padding: 20px 0;
+            margin-top: auto; /* Pousse le footer en bas */
         }
         .logos {
             display: flex;
             justify-content: center;
-            align-items: flex-end;
-            height: 100px;
+            align-items: center;
             margin-top: 20px;
         }
         .logo-img {
@@ -75,10 +82,51 @@
             text-align: right;
             width: 100%;
         }
+        
+        /* Styles pour les images pleine largeur */
+        .full-width-image {
+            width: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        /* Sur mobile et tablette */
+        @media only screen and (max-width: 1024px) {
+            .full-width-image {
+                max-width: 100%;
+            }
+        }
+        
+        /* Sur desktop */
+        @media only screen and (min-width: 1025px) {
+            .full-width-image {
+                width: 100%;
+                max-width: none;
+            }
+        }
+        
+        /* Styles responsives spécifiques à cette page */
+        @media only screen and (max-width: 767px) {
+            .container img {
+                width: 100%;
+                height: auto;
+            }
+            
+            .logo-img {
+                max-height: 30px;
+                margin: 0 5px;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
+        <div class="mobile-nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
         <nav class="navbar">
             <ul>
                 <li><a href="program.html">Programme</a></li>
@@ -92,16 +140,15 @@
     </header>
 
     <div class="container">
-        <div style="text-align: center;">
-            <img src="image/artistes.png" alt="Description de l'image" style="width:100%; display: block; margin: 0 auto;" />
+        <div style="text-align: center; width: 100%;">
+            <img src="image/artistes.png" alt="Description de l'image" class="full-width-image" />
         </div>
-        
     </div>
 
     <footer>
         <div class="footer-content">
             <a href="index.html" class="logo-link">
-                <img src="image/23-24_2e_GR_Re_LOGO_SBMPlan de travail 1 copie 3.png" alt="Logo" class="logo">
+                <img src="image/23-24_2e_GR_Re_LOGO_SBMPlan de travail 1 copie 3.png" alt="Logo" class="logo" style="max-width: 100px;">
             </a>
 
             <div class="logos">
@@ -124,5 +171,11 @@
             </div>
         </div>
     </footer>
+    
+    <script>
+        document.querySelector('.mobile-nav-toggle').addEventListener('click', function() {
+            document.querySelector('.navbar ul').classList.toggle('show');
+        });
+    </script>
 </body>
 </html>
