@@ -6,11 +6,51 @@
     <title>Modeled VR Abstraction</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="responsive.css">
+    <style>
+        .intro-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .intro-animation video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Cette propriété est essentielle pour les mobiles */
+        }
+        
+        /* Pour la vidéo d'arrière-plan également */
+        .video-background video {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+        
+        @media only screen and (max-width: 767px) {
+            .intro-animation video {
+                /* Pour s'assurer que la vidéo est bien centrée sur mobile */
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                min-height: 100%;
+                min-width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Animation d'introduction avec MP4 -->
     <div class="intro-animation">
-        <video autoplay loop muted>
+        <video autoplay loop muted playsinline>
             <source src="image/Intro.mp4" type="video/mp4">
             Votre navigateur ne supporte pas les vidéos HTML5.
         </video>
@@ -36,7 +76,7 @@
                 </ul>
             </nav>
             <div class="video-background">
-                <video autoplay loop muted class="bg-video">
+                <video autoplay loop muted playsinline class="bg-video">
                     <source src="image/MD.mp4" type="video/mp4">
                     Votre navigateur ne supporte pas les vidéos HTML5.
                 </video>
