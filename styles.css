@@ -188,3 +188,28 @@ body {
     margin: 0 auto; /* Centrer la vidéo horizontalement */
 }
 
+.video-embed {
+    width: 100%;
+    max-width: 1120px;
+    margin: 40px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.video-embed iframe {
+    width: 100%;
+    aspect-ratio: 16/9; /* Maintient le ratio 16:9 */
+    border-radius: 10px; /* Pour des coins arrondis */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Ajoute une légère ombre */
+}
+
+@media only screen and (max-width: 767px) {
+    .video-embed {
+        margin: 20px auto;
+    }
+    
+    .video-embed iframe {
+        height: auto; /* Assure que la hauteur s'ajuste proportionnellement */
+    }
+}
+
