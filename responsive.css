@@ -1,0 +1,126 @@
+/* Styles responsives pour tous les appareils */
+
+/* Styles pour les appareils mobiles (jusqu'à 767px) */
+@media only screen and (max-width: 767px) {
+    /* Navigation */
+    .navbar ul {
+        flex-direction: column;
+        padding: 0;
+        display: none;
+    }
+    
+    .navbar ul.show {
+        display: flex;
+    }
+    
+    .navbar ul li {
+        display: block;
+        margin: 5px 0;
+    }
+    
+    .navbar ul li a {
+        display: block;
+        padding: 10px;
+        border-right: none !important;
+        border-bottom: 1px solid #FFFFFF;
+    }
+    
+    /* Contenu vidéo et iframe */
+    .youtube-video {
+        width: 100%;
+        height: auto;
+    }
+    
+    .youtube-video iframe {
+        width: 100%;
+        height: 56.25vw; /* Ratio 16:9 */
+    }
+    
+    /* Ajustement du rectangle défilant */
+    .rounded-rectangle {
+        width: 95% !important;
+        height: auto !important;
+        font-size: 24px !important;
+        padding: 15px !important;
+    }
+    
+    /* Ajustement des événements du programme */
+    .text-left {
+        font-size: 16px;
+    }
+    
+    /* Ajustement du footer */
+    .logo {
+        width: 70px;
+    }
+    
+    .logos img {
+        width: 30px;
+    }
+    
+    /* Ajustement du bouton CTA */
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+    
+    /* Ajustement du header */
+    .header-content h1 {
+        font-size: 2em;
+    }
+    
+    .header-content p {
+        font-size: 1.2em;
+    }
+    
+    /* Style pour le rectangle du programme */
+    .program-header {
+        background-color: #E91E63;
+        border-radius: 20px;
+        margin: 10px auto;
+    }
+}
+
+/* Styles pour les tablettes (768px à 1023px) */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .youtube-video, .youtube-video iframe {
+        width: 100%;
+        height: 400px;
+    }
+    
+    .rounded-rectangle {
+        width: 90% !important;
+    }
+}
+
+/* Pour assurer que les vidéos soient toujours fluides */
+video, iframe {
+    max-width: 100%;
+}
+
+/* Styles du menu hamburger */
+.mobile-nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.mobile-nav-toggle span {
+    height: 3px;
+    width: 100%;
+    background-color: #FFFFFF;
+    border-radius: 3px;
+}
+
+@media only screen and (max-width: 767px) {
+    .mobile-nav-toggle {
+        display: flex;
+    }
+}
