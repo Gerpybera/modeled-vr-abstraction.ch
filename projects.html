@@ -5,7 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projets - Modeled VR Abstraction</title>
     <link rel="stylesheet" href="styles4.css">
+    <link rel="stylesheet" href="responsive.css">
     <style>
+        body {
+            /* Structure de base pour éviter le chevauchement */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        
         .rounded-box {
             border-radius: 255px;
             padding: 1px 25px;
@@ -16,6 +26,7 @@
             font-size: 40px;
             margin: 20px;
         }
+        
         .rounded-box2 {
             border: 1px solid magenta;
             border-radius: 20px;
@@ -28,57 +39,175 @@
             margin: 20px auto;
             font-size: 20px;
         }
+        
         .container {
+            /* Remplacer la hauteur fixe par une structure flexible */
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
-            height: calc(100vh - 150px);
+            align-items: center;
+            flex-grow: 1;
+            width: 100%;
+            padding-bottom: 30px;
         }
+        
+        /* Styles pour les images pleine largeur */
+        .full-width-image {
+            width: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        /* Sur mobile et tablette */
+        @media only screen and (max-width: 1024px) {
+            .full-width-image {
+                max-width: 100%;
+            }
+        }
+        
+        /* Sur desktop */
+        @media only screen and (min-width: 1025px) {
+            .full-width-image {
+                width: 100%;
+                max-width: none;
+            }
+        }
+        
         .text-column {
             font-family: Arial, sans-serif;
             color: #333;
         }
+        
         .image {
             max-width: 100%;
             border-radius: 10px;
         }
+        
+        /* Structure du footer pour éviter le chevauchement */
+        footer {
+            margin-top: auto;
+            width: 100%;
+        }
+        
         .footer-content {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-end;
-            height: 4000px; /* Ajusté pour assurer que le contenu soit bien placé */
-            position: relative;
-            bottom: 0;
             width: 100%;
+            padding: 20px 0;
+            /* Suppression de la hauteur fixe de 4000px qui cause le problème */
+            height: auto;
+            position: relative;
         }
+        
         .logos {
             display: flex;
             justify-content: center;
-            align-items: flex-end;
-            height: 100px;
+            align-items: center;
             margin-top: 20px;
+            height: auto;
         }
+        
         .logo-img {
             max-height: 50px;
             margin: 0 10px;
         }
+        
+        .logo {
+            max-width: 100px;
+        }
+        
         .footer-bottom {
             text-align: center;
             margin-top: 20px;
         }
+        
         .left-align {
             text-align: left;
             width: 75%;
         }
+        
         .right-align {
             text-align: right;
             width: 100%;
+        }
+        
+        /* Styles pour le menu mobile */
+        .mobile-nav-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 25px;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            z-index: 1000;
+            cursor: pointer;
+        }
+        
+        .mobile-nav-toggle span {
+            height: 3px;
+            width: 100%;
+            background-color: #FFFFFF;
+            border-radius: 3px;
+        }
+        
+        /* Media queries pour les appareils mobiles */
+        @media only screen and (max-width: 767px) {
+            .mobile-nav-toggle {
+                display: flex;
+            }
+            
+            .navbar ul {
+                display: none;
+                flex-direction: column;
+                padding: 0;
+            }
+            
+            .navbar ul.show {
+                display: flex;
+            }
+            
+            .navbar ul li {
+                margin: 5px 0;
+                display: block;
+            }
+            
+            .navbar ul li a {
+                display: block;
+                padding: 10px;
+            }
+            
+            .container img {
+                width: 100%;
+                height: auto;
+            }
+            
+            .logo-img {
+                max-height: 30px;
+                margin: 0 5px;
+            }
+            
+            .logo {
+                max-width: 80px;
+            }
+            
+            .rounded-box {
+                font-size: 24px;
+                padding: 1px 15px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
+        <!-- Bouton menu hamburger pour mobile -->
+        <div class="mobile-nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
         <nav class="navbar">
             <ul>
                 <li><a href="program.html">Programme</a></li>
@@ -92,10 +221,9 @@
     </header>
 
     <div class="container">
-        <div style="text-align: center;">
-            <img src="image/projets.png" alt="Description de l'image" style="width:100%; display: block; margin: 0 auto;" />
+        <div style="text-align: center; width: 100%;">
+            <img src="image/projets.png" alt="Description de l'image" class="full-width-image" />
         </div>
-        
     </div>
 
     <footer>
@@ -124,5 +252,12 @@
             </div>
         </div>
     </footer>
+    
+    <!-- Script pour gérer le menu mobile -->
+    <script>
+        document.querySelector('.mobile-nav-toggle').addEventListener('click', function() {
+            document.querySelector('.navbar ul').classList.toggle('show');
+        });
+    </script>
 </body>
 </html>
