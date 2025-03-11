@@ -186,6 +186,19 @@
                         animation: marquee 8s linear infinite; /* Animation plus rapide sur mobile */
                     }
                 }
+
+                /* Agrandissement des textes du programme uniquement sur ordinateur */
+                @media only screen and (min-width: 768px) {
+                    .program-item .text-left {
+                        font-size: 35px; /* Taille plus grande pour desktop */
+                        padding: 10px 5px; /* Plus d'espace vertical et horizontal */
+                    }
+                    
+                    .rounded-rectangle.program-item {
+                        padding: 25px; /* Rectangle plus grand pour accueillir le texte */
+                        min-height: 30px; /* Hauteur minimale pour l'uniformité */
+                    }
+                }
             </style>
 
         </header>
