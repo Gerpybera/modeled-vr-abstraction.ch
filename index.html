@@ -134,17 +134,20 @@
                 
                 /* Style spécifique pour l'en-tête du programme */
                 .program-header {
-                    background-color: #E91E63; /* Remise de la couleur magenta au lieu du dégradé */
+                    background-color: #E91E63; /* Couleur magenta */
                     color: white;
-                    font-size: 40px;
+                    font-size: 40px; 
                     font-weight: bold;
                     justify-content: center;
                     align-items: center;
                     overflow: hidden;
                     white-space: nowrap;
-                    padding: 15px 20px;
+                    padding: 20px 20px; /* Réduisez la première valeur pour diminuer la hauteur */
                     border-radius: 100px;
                     margin-bottom: 20px;
+                    max-width: 55%; /* Contrôle la largeur */
+                    height: 100px; /* Ajoutez cette ligne pour contrôler la hauteur */
+                    line-height: 60px; /* Centrage vertical du texte */
                 }
                 
                 /* Style pour les éléments du programme */
@@ -171,6 +174,17 @@
                 @keyframes marquee {
                     0% { transform: translateX(200%); }
                     100% { transform: translateX(-200%); }
+                }
+
+                /* Ajustement de la largeur de l'en-tête du programme sur mobile */
+                @media only screen and (max-width: 767px) {
+                    .program-header {
+                        max-width: 100%; /* Prendre toute la largeur comme les autres éléments */
+                    }
+                    
+                    #scrolling-text {
+                        animation: marquee 8s linear infinite; /* Animation plus rapide sur mobile */
+                    }
                 }
             </style>
 
