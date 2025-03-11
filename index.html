@@ -91,146 +91,87 @@
                 <iframe title="vimeo-player" src="https://player.vimeo.com/video/1064413977?h=884d04a6c1" width="1120" height="630" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
             </div>
             
-            
+            <!-- En-tête du programme -->
             <div class="centered">
                 <div class="rounded-rectangle program-header">
                     <span id="scrolling-text">PROGRAMME DU JOUR</span>
                 </div>
             </div>
-            
-            <style>
-            .centered {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                overflow: hidden;
-                height: 20vh; /* Ajuster si nécessaire */
-            }
-            
-            .rounded-rectangle {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                font-size: 40px;
-                overflow: hidden;
-                white-space: nowrap;
-                width: 100%;
-            }
-            
-            #scrolling-text {
-                animation: marquee 12s linear infinite;
-            }
-            
-            @keyframes marquee {
-                0% { transform: translateX(200%); }
-                100% { transform: translateX(-200%); }
-            }
-            </style>
 
+            <!-- Éléments du programme -->
             <div class="centered">
-                <div class="rounded-rectangle">
+                <div class="rounded-rectangle program-item">
                     <div class="text-left">Atelier de création de contenu VR avec Antoine Bertin ● 10h00 - 13h00</div>
                 </div>
             </div>
 
-            <style>
-            .centered {
-                display: flex;
-                justify-content: center;
-            }
-            .rounded-rectangle {
-                border-radius: 5px;
-                padding: 20px;
-                display: flex;
-            }
-            .text-left {
-                flex: 1;
-            }
-            .image-right {
-                flex: 1;
-                text-align: right;
-            }
-            </style>
-                        </style>
-
             <div class="centered">
-                <div class="rounded-rectangle">
+                <div class="rounded-rectangle program-item">
                     <div class="text-left">Présentation de films VR - Virtual Escape + Dreamspace ● 14h30 - 17h30</div>
                 </div>
             </div>
 
-            <style>
-            .centered {
-                display: flex;
-                justify-content: center;
-            }
-            .rounded-rectangle {
-                border: 1px solid #2ECC71;
-                border-radius: 5px;
-                padding: 20px;
-                display: flex;
-            }
-            .text-left {
-                flex: 1;
-            }
-            .image-right {
-                flex: 1;
-                text-align: right;
-            }
-            </style>
-                        </style>
-
             <div class="centered">
-                <div class="rounded-rectangle">
+                <div class="rounded-rectangle program-item">
                     <div class="text-left">Démo de jeux VR - Virtual Racer + Fantasy Quest ● 18h00 - 20h30</div>
                 </div>
             </div>
 
-            <style>
-            .centered {
-                display: flex;
-                justify-content: center;
-            }
-            .rounded-rectangle {
-                border: 1px solid #2ECC71;
-                border-radius: 5px;
-                padding: 20px;
-                display: flex;
-            }
-            .text-left {
-                flex: 1;
-            }
-            .image-right {
-                flex: 1;
-                text-align: right;
-            }
-            </style>
-                        </style>
-
             <div class="centered">
-                <div class="rounded-rectangle">
+                <div class="rounded-rectangle program-item">
                     <div class="text-left">Compétition de jeux VR ● 20h30 - 22h00</div>
                 </div>
             </div>
 
             <style>
-            .centered {
-                display: flex;
-                justify-content: center;
-            }
-            .rounded-rectangle {
-                border: 1px solid #2ECC71;
-                border-radius: 5px;
-                padding: 20px;
-                display: flex;
-            }
-            .text-left {
-                flex: 1;
-            }
-            .image-right {
-                flex: 1;
-                text-align: right;
-            }
+                /* Styles globaux pour tous les rectangles arrondis */
+                .rounded-rectangle {
+                    border-radius: 5px;
+                    padding: 20px;
+                    display: flex;
+                    width: 100%;
+                }
+                
+                /* Style spécifique pour l'en-tête du programme */
+                .program-header {
+                    background-color: #E91E63; /* Remise de la couleur magenta au lieu du dégradé */
+                    color: white;
+                    font-size: 40px;
+                    font-weight: bold;
+                    justify-content: center;
+                    align-items: center;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    padding: 15px 20px;
+                    border-radius: 10px;
+                    margin-bottom: 20px;
+                }
+                
+                /* Style pour les éléments du programme */
+                .program-item {
+                    border: 1px solid #2ECC71;
+                    margin: 10px 0;
+                }
+                
+                .text-left {
+                    flex: 1;
+                }
+                
+                .centered {
+                    display: flex;
+                    justify-content: center;
+                    width: 100%;
+                    margin: 10px 0;
+                }
+                
+                #scrolling-text {
+                    animation: marquee 12s linear infinite;
+                }
+                
+                @keyframes marquee {
+                    0% { transform: translateX(200%); }
+                    100% { transform: translateX(-200%); }
+                }
             </style>
 
         </header>
